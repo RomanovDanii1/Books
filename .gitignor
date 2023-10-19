@@ -1,0 +1,7 @@
+__init__.py
+celerybeat-schedule.bak
+celerybeat-schedule.dat
+celerybeat-schedule.dir
+db.sqlite3
+manage.py
+books/__init__.py
