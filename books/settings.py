@@ -1,5 +1,5 @@
-from datetime import timedelta
 from pathlib import Path
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -128,8 +128,15 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 
 
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # URL для Redis
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # URL для Redis
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+CELERY_BEAT_SCHEDULE = {
+    'update-reading-statistics-daily': {
+        'task': 'api.tasks.update_reading_statistics',
+        'schedule': crontab(minute=0, hour=0),  # Кожного дня о 00:00
+    },
+}
 
 
 

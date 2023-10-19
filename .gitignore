@@ -1,10 +1,30 @@
-__init__.py
-celerybeat-schedule.bak
-celerybeat-schedule.dat
-celerybeat-schedule.dir
-db.sqlite3
-manage.py
-books/__init__.py
-books/migrations
-api/migrations
-api/__init__.py
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.bak
+*.swp
+*.swo
+*.swn
+*.bak
+*.pyc
+*.db
+*.sqlite3
+
+# Файли медіа, які завантажуються користувачами
+media/
+
+# Кешовані файли (генеруються в процесі виконання)
+staticfiles/
+static/
+assets/
+
+# файли конфігурації та змінні середовища
+.env
+*.env
+
+# Всі файли з папки, де знаходиться база даних (міграції, тощо)
+/migrations/
