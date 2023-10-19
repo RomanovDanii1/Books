@@ -5,3 +5,6 @@ celerybeat-schedule.dir
 db.sqlite3
 manage.py
 books/__init__.py
+books/migrations
+api/migrations
+api/__init__.py
